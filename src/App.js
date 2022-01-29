@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          jhjlhjhñjk
+          jhj
         </a>
       </header>
     </div>
