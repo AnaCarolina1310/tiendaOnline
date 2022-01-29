@@ -1,6 +1,7 @@
+import "./itemListContainer.css"
 export const ItemListContainer = ({greeting}) =>{
     return(
-        <section>
+        <section className="itemListContainer">
             <h2>{greeting}</h2>
         </section>
     )
