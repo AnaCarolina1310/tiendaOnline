@@ -1,0 +1,20 @@
+.header{
+padding: 20px 50px;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: aquamarine;
+}
+.nav-Bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+
+}
+.enlaces{
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+}
