@@ -4,7 +4,7 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: aquamarine;
+background-color: rgb(77, 173, 141);
 }
 .nav-Bar{
     display: flex;
