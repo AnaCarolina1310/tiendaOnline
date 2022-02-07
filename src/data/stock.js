@@ -1,7 +1,7 @@
 export const stock = [ 
     {
     "code": 1,
-    "nombre": "Body Aurora",
+    "nombre": "Body ",
     "precio": 2750,
     "imagen": "https://www.vinetur.com/imagenes/2019/agosto/5/vino_termometro.jpg"
     },
