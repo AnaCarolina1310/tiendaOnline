@@ -23,8 +23,9 @@ export const ItemListContainer = () =>{
     
     return(
         <section className="itemListContainer">
-           
+           <div className="row">
             {productos.map((el, i)=> <Item key={i} nombre={el.nombre} precio={el.precio} descripcion={el.descripcion} imagen={el.imagen}/>)}
+            </div>
         </section>
     )
 }
