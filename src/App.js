@@ -2,7 +2,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { NavBar } from "./components/NavBar/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles.css"
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 
 
 function App() {
@@ -10,7 +10,11 @@ function App() {
     <div>
       <BrowserRouter>
          <NavBar/>
-         <ItemListContainer />
+         <Routes>
+           <Route path="/" element={<ItemListContainer/>}/>
+           <Route path="*" element={<Navigate to='/'/>}/>
+         </Routes>
+        
       </BrowserRouter>
     </div>
   );
