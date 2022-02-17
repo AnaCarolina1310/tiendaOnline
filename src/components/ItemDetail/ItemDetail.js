@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap'
+
 import { Card } from 'react-bootstrap'
 export const ItemDetail = ({id, nombre, precio, imagen, descripcion}) => {
 
