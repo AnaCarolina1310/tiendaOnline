@@ -1,6 +1,8 @@
 
 import { Card } from 'react-bootstrap'
-export const ItemDetail = ({id, nombre, precio, imagen, descripcion}) => {
+import { ItemCount } from '../ItemCount/ItemCount';
+
+export const ItemDetail = ({id, nombre, precio, imagen, descripcion,stock}) => {
 
     return (
         <div >
@@ -16,9 +18,10 @@ export const ItemDetail = ({id, nombre, precio, imagen, descripcion}) => {
     <Card.Text>
     Precio: {precio}
     </Card.Text>
-    
+    <ItemCount max={stock}/>
   </Card.Body>
 </Card>
+
         </>
 
         </div>

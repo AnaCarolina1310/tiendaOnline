@@ -1,13 +1,13 @@
 import { useState } from "react"
 
-export const ItemCount = () => {
+export const ItemCount = ({max, min = 0}) => {
  
     const [counter, setCounter ] = useState(0)
     const handleSumar = () =>{
-        setCounter(counter + 1)
+       counter < max && setCounter(counter + 1)
     }
     const handleRestar = () =>{
-        setCounter(counter - 1)
+       counter > min && setCounter(counter - 1)
     }
 
     return (
