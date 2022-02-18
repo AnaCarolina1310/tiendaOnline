@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import {useParams} from 'react-router-dom'
 import { pedirDatos } from "../../helpers/pedirDatos"
 import { ItemDetail } from '../ItemDetail/ItemDetail';
+import { ItemCount } from '../ItemCount/ItemCount';
 
 export const ItemDetailContainer = ()=>{
      const [item, setItem ] = useState(null);
@@ -24,6 +25,7 @@ export const ItemDetailContainer = ()=>{
         <div>
 
         <ItemDetail {...item}/>
+        <ItemCount/>
         </div>
     )
 }
