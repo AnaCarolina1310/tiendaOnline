@@ -4,7 +4,7 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: rgb(77, 173, 141);
+background-color: white;
 }
 .nav-Bar{
     display: flex;
@@ -17,4 +17,7 @@ background-color: rgb(77, 173, 141);
     text-transform: uppercase;
     font-size: 20px;
     cursor: pointer;
+    color: black;
+    text-decoration-line: none;
+    
 }

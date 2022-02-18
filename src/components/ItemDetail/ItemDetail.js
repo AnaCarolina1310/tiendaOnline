@@ -1,7 +1,7 @@
 
-import { Card } from 'react-bootstrap'
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useState } from 'react';
+import './itemDetail.css'
 
 
 export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
@@ -15,23 +15,18 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
 
 
     return (
-        <div >
-       <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={imagen} />
-  <Card.Body>
-    <Card.Title>{nombre}</Card.Title>
-    <Card.Text>
-     {descripcion}
-    </Card.Text>
-    <Card.Text>
-    Precio: {precio}
-    </Card.Text>
-    <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
-    <button className="btn btn-success my-3" onClick={handleAgregar}>
-      Agregar al carrito
-    </button>
-  </Card.Body>
-</Card>
+ 
+   <div>
+     
+          <img src={imagen} alt={nombre} />
+     
+     
+        <h2>{nombre}</h2>
+        <h2>Precio: ${precio}</h2>
+        <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
+        <button className="btn btn-success my-3" onClick={handleAgregar}>
+          Agregar al carrito
+        </button>
         </div>
     )
 }
