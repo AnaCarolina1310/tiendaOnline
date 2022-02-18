@@ -2,7 +2,7 @@ import './item.css'
 import { Button } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import {Link} from  'react-router-dom'
-export const Item = ({id, nombre, precio, imagen, descripcion})=>{
+export const Item = ({id, nombre, precio, imagen, descripcion, stock})=>{
     return (
         <>
        
