@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-export const ItemCount = ({max, min = 0}) => {
+export const ItemCount = ({max, min = 0, counter, setCounter}) => {
  
-    const [counter, setCounter ] = useState(0)
+    
     const handleSumar = () =>{
        counter < max && setCounter(counter + 1)
     }
