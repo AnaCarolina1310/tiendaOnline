@@ -4,37 +4,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import "./styles.css"
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
-import {useState} from 'react'
-import {CartContext} from './components/CartContext/CartContext'
+import {CartProvider} from './components/CartContext/CartContext'
+
 
 function App() {
- const [cart, setCart,  ] = useState([])
- 
- const agregarAlCarrito = (item)=>{
-   setCart([...cart, item])
- }
- const isInCart = (id)=>{
-  return cart.some((prod)=> prod.id === id)
- }
- const cantidadProductos = ()=>{
-   return cart.reduce((acc, prod) => acc + prod.cantidad, 0) 
- }
- const precioTotal = ()=>{
-  return cart.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0) 
-}
+
  
  
   return (
     <>
-      <CartContext.Provider value={
-        {
-        cart,
-        agregarAlCarrito,
-        isInCart,
-        cantidadProductos,
-        precioTotal
-      }
-      }>
+   <CartProvider>
       <BrowserRouter>
          <NavBar/>
          <Routes>
@@ -45,7 +24,7 @@ function App() {
          </Routes>
         
       </BrowserRouter>
-      </CartContext.Provider>
+  </CartProvider>
     </>
   );
 }

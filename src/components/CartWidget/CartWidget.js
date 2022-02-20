@@ -5,11 +5,12 @@ import { useContext } from 'react'
 import { CartContext } from '../CartContext/CartContext'
 
 export const CartWidget =() =>{
- const {cantidadProductos} = useContext(CartContext)
+ const {cantidadProductos, precioTotal} = useContext(CartContext)
     return(
         <Link to='/cart' className='carrito-icon'>
             <BsFillCartFill/>
             <span>{cantidadProductos()}</span>
+             <span>${precioTotal()}</span>
         </Link>
     )
 }
