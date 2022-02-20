@@ -1,0 +1,6 @@
+.contenedor{
+    max-width: 80%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+}
