@@ -19,6 +19,9 @@ function App() {
  const cantidadProductos = ()=>{
    return cart.reduce((acc, prod) => acc + prod.cantidad, 0) 
  }
+ const precioTotal = ()=>{
+  return cart.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0) 
+}
  
  
   return (
@@ -28,7 +31,8 @@ function App() {
         cart,
         agregarAlCarrito,
         isInCart,
-        cantidadProductos
+        cantidadProductos,
+        precioTotal
       }
       }>
       <BrowserRouter>
