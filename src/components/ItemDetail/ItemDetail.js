@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import './itemDetail.css'
 import { Card } from 'react-bootstrap';
 import {Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext';
 
 export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
@@ -26,7 +27,7 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
 }
 
     return (
- 
+   <div>
       <Card style={{ width: '60%', margin:'10px auto', border:'none', display:'flex'}}>
       <Card.Img variant="top" src={imagen} style={{width:'40%',margin:'10px auto' }} />
       <Card.Body>
@@ -37,9 +38,23 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
         <Card.Text>
           Precio: ${precio}
         </Card.Text>
-        <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
+        {
+      isInCart(id)
+      ? 
+          <Link to="/" className="btn btn-success">
+            Continuar comprando
+          </Link>
+       :
+       <>
+       <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
         <Button variant="success"  onClick={handleAgregar}>Añadir al carrito</Button>
+      </>
+    
+    }
       </Card.Body>
     </Card>
+    
+    </div>
+   
     )
 }

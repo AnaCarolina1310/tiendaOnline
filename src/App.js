@@ -16,6 +16,9 @@ function App() {
  const isInCart = (id)=>{
   return cart.some((prod)=> prod.id === id)
  }
+ const cantidadProductos = ()=>{
+   return cart.reduce((acc, prod) => acc + prod.cantidad, 0) 
+ }
  
  
   return (
@@ -24,7 +27,8 @@ function App() {
         {
         cart,
         agregarAlCarrito,
-        isInCart
+        isInCart,
+        cantidadProductos
       }
       }>
       <BrowserRouter>
