@@ -8,10 +8,13 @@ import {useState} from 'react'
 import {CartContext} from './components/CartContext/CartContext'
 
 function App() {
- const [cart, setCart ] = useState([])
+ const [cart, setCart,  ] = useState([])
  
  const agregarAlCarrito = (item)=>{
    setCart([...cart, item])
+ }
+ const isInCart = (id)=>{
+  return cart.some((prod)=> prod.id === id)
  }
  
  
@@ -21,7 +24,7 @@ function App() {
         {
         cart,
         agregarAlCarrito,
-       
+        isInCart
       }
       }>
       <BrowserRouter>

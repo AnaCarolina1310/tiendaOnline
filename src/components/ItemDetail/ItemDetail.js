@@ -9,16 +9,19 @@ import { CartContext } from '../CartContext/CartContext';
 export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
   const [ cantidad, setCantidad] = useState(0)
   
-  const{cart, agregarAlCarrito} = useContext(CartContext);
+  const{cart, agregarAlCarrito, isInCart} = useContext(CartContext);
   console.log(cart)
   const handleAgregar = ()=>{
-    if(cantidad === 0) return;
+    if(cantidad === 0) return
    
+    if (!isInCart(id)){
     const agregarItem = {
       id, nombre, precio, stock, cantidad
     }
     agregarAlCarrito(agregarItem)
-    console.log(cart)
+    
+   }
+    
   
 }
 
