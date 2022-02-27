@@ -12,9 +12,9 @@ export const ItemCount = ({max, min = 0, counter, setCounter}) => {
 
     return (
         <div>
-            <button className="btn btn-outline-primary my-2" onClick={handleRestar}>-</button>
+            <button className="btn btn-outline-primary my-2" disabled={counter === min} onClick={handleRestar}>-</button>
             <span className="mx-3">{counter}</span>
-            <button className="btn btn-outline-primary m-2" onClick={handleSumar}>+</button>
+            <button className="btn btn-outline-primary m-2" disabled={counter === max} onClick={handleSumar}>+</button>
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import "./itemListContainer.css"
 import { useEffect } from "react"
 import { useState } from "react"
-import { pedirDatos } from "../../helpers/pedirDatos"
 import { Item } from "../Item/item"
 import { useParams } from "react-router-dom"
+import { db } from "../../firebase/config"
+import { collection, getDocs } from "firebase/firestore"
 
 export const ItemListContainer = () =>{
    const  [productos, setProductos ] = useState([]); 
@@ -11,18 +12,11 @@ export const ItemListContainer = () =>{
    const {catId} = useParams();
    
     useEffect(()=>{
-        pedirDatos()
-                    .then((res)=>{
-                        if(catId){ 
-                        setProductos(res.filter((el) => el.categoria === catId))
-                        } else {setProductos(res)}
-                    })
-                    .catch((err)=>{
-                        console.log(err)
-                    })
-                    .finally(()=>{
-                        console.log('Fin del proceso')
-                    })
+        const productosRef = collection(db, 'productos')
+        getDocs(productosRef)
+            .then((res)=>{
+                setProductos(res.docs.map((doc)=> doc.data()))
+            })
     }, [catId])
     
     
