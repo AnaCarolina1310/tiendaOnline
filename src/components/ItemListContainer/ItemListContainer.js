@@ -15,7 +15,12 @@ export const ItemListContainer = () =>{
         const productosRef = collection(db, 'productos')
         getDocs(productosRef)
             .then((res)=>{
-                setProductos(res.docs.map((doc)=> doc.data()))
+                setProductos(res.docs.map((doc)=> {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }))
             })
     }, [catId])
     
