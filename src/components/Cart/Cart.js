@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../CartContext/CartContext"
 import {BsTrash} from 'react-icons/bs'
+import { Link } from "react-router-dom"
 
 export const Cart = () => {
 
@@ -28,7 +29,7 @@ export const Cart = () => {
              <h2>Total: ${precioTotal()}</h2> 
              <div>
                  <button className="btn btn-danger mx-4" onClick={vaciarCarrito}>Vaciar carrito</button>
-                 <button className="btn btn-success" >Finalizar compra</button>
+                 <Link to="/checkout" className="btn btn-success" >Finalizar compra</Link>
              </div>
         </div>
     )

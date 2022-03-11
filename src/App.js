@@ -6,6 +6,7 @@ import "./styles.css"
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import {CartProvider} from './components/CartContext/CartContext'
 import {Cart} from './components/Cart/Cart'
+import {Checkout} from './components/Checkout/Checkout'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
            <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
            <Route path="*" element={<Navigate to='/'/>}/>
            <Route path="/cart" element={<Cart/>}/>
+           <Route path="/checkout" element={<Checkout/>}/>
          </Routes>
         
       </BrowserRouter>
