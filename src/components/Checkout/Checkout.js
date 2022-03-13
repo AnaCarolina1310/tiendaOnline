@@ -1,13 +1,34 @@
+import { collection, addDoc, Timestamp } from "firebase/firestore"
 import { useContext, useState } from "react"
+import { Link } from "react-router-dom"
+import { Navigate } from "react-router-dom"
+import { db } from "../../firebase/config"
 import { CartContext } from "../CartContext/CartContext"
 
 export const Checkout = () =>{
-    const {cart, precioTotal} = useContext(CartContext)
+    const [orderId, setOrderId ] = useState(null)
+    const {cart, precioTotal, vaciarCarrito} = useContext(CartContext)
     const [values, setValues ] = useState({
         nombre: '',
         email:'',
-        tel: ''
+        tel: '',
+        fyh: Timestamp.fromDate(new Date())
     })
+
+const generarOrden = ()=>{
+    const order = {
+        comprador:values,
+        items: cart,
+        total: precioTotal()
+    }
+    const orderRefe = collection(db, "orders")
+    addDoc(orderRefe, order)
+        .then((doc)=>{
+            console.log(doc.id)
+            setOrderId(doc.id)
+            vaciarCarrito()
+        })
+}    
 const handleInputChange = (e)=>{
     setValues({
         ...values,
@@ -17,22 +38,23 @@ const handleInputChange = (e)=>{
  const handleSubmit = (e) =>{
      e.preventDefault()
     if((values.nombre === '' || values.nombre.length < 6)|| values.email === '' || values.tel.length < 9){
-       alert('Completar los datos correctamente')
-    } else{
-        const order = {
-            comprador:values,
-            items: cart,
-            total: precioTotal()
-        }
-        console.log(order)
-       console.log(order.items.length)
-    }
-     
+      alert('Completar los datos correctamente')
+       
+    } 
+    generarOrden()
  }
-
-
-    
-    
+ if(orderId){
+     return(
+         <div className="container my-2">
+         <h2>Gracias por su compra! Su numero de orden es {orderId}</h2>
+         <hr/>
+         <Link to="/" className="btn btn-primary">Volver</Link>
+         </div>
+     )
+ }
+ if(cart.length === 0){
+    return <Navigate to="/"/>
+}    
     
     return (
         <div className="container my-5">
@@ -66,9 +88,9 @@ const handleInputChange = (e)=>{
             <button type="submit" className="btn btn-primary">
             Enviar
             </button>
-            
+        
             </form>
-|           
+        
         </div>
     )
 }
