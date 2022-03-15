@@ -13,6 +13,7 @@ background-color: white;
     width: 40%;
     
 }
+
 .enlaces{
     text-transform: uppercase;
     font-size: 20px;
@@ -20,4 +21,14 @@ background-color: white;
     color: black;
     text-decoration-line: none;
     
+}
+@media (max-width: 768px) {
+  .header{
+    flex-direction:column;
+  }  
+  .nav-Bar {
+      display: flex;
+      flex-direction: column;
+  }
+
 }

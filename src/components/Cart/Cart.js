@@ -10,6 +10,7 @@ export const Cart = () => {
     return (
 
         <div className="container my-3">
+            
             <h2>Tu carrito</h2>
             <hr/>
 

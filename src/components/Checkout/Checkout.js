@@ -1,4 +1,4 @@
-import { collection, addDoc, Timestamp } from "firebase/firestore"
+import { collection, addDoc, Timestamp, updateDoc, doc, getDoc } from "firebase/firestore"
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { Navigate } from "react-router-dom"
@@ -23,9 +23,19 @@ const generarOrden = ()=>{
     }
     const orderRefe = collection(db, "orders")
     addDoc(orderRefe, order)
-        .then((doc)=>{
-            console.log(doc.id)
-            setOrderId(doc.id)
+        .then((res)=>{
+            cart.forEach((prod)=>{
+             const docRef = doc(db, "productos", prod.id)
+             getDoc(docRef)
+                .then((dbDoc)=>{
+                    updateDoc(docRef, {stock:dbDoc.data().stock - prod.cantidad})
+                })
+                    
+                
+            })
+
+
+            setOrderId(res.id)
             vaciarCarrito()
         })
 }    
