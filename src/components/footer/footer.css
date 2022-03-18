@@ -1,0 +1,8 @@
+.redes{
+   display: flex;
+   justify-content: center;
+
+}
+.redesIcons{
+    margin: 5px 15px;
+}

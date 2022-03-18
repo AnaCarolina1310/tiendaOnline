@@ -1,6 +1,6 @@
 .itemListContainer{
     max-width: 900px;
-    margin: 30px auto;
+    margin: 300px auto;
     padding: 10px;
-    display: inline;
+    display: flex;
 }

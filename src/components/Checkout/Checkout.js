@@ -1,4 +1,4 @@
-import { collection, addDoc, Timestamp, updateDoc, doc, getDoc } from "firebase/firestore"
+import { collection, addDoc,Timestamp, updateDoc, doc, getDoc } from "firebase/firestore"
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { Navigate } from "react-router-dom"
@@ -15,30 +15,30 @@ export const Checkout = () =>{
         fyh: Timestamp.fromDate(new Date())
     })
 
-const generarOrden = ()=>{
+const generarOrden =  ()=>{
     const order = {
         comprador:values,
         items: cart,
         total: precioTotal()
     }
+    
     const orderRefe = collection(db, "orders")
-    addDoc(orderRefe, order)
-        .then((res)=>{
-            cart.forEach((prod)=>{
-             const docRef = doc(db, "productos", prod.id)
-             getDoc(docRef)
-                .then((dbDoc)=>{
-                    updateDoc(docRef, {stock:dbDoc.data().stock - prod.cantidad})
-                })
-                    
-                
-            })
-
-
-            setOrderId(res.id)
-            vaciarCarrito()
-        })
+   addDoc(orderRefe, order)
+    .then((res)=>{
+        cart.forEach((element) => {
+            const docRef = doc(db, "productos", element.id)
+            getDoc(docRef)
+               .then((dataDoc)=>{
+                   updateDoc(docRef, {stock: dataDoc.data().stock - element.cantidad})
+               })
+        });
+        
+        setOrderId(res.id)
+        vaciarCarrito()
+    })
+   
 }    
+
 const handleInputChange = (e)=>{
     setValues({
         ...values,
@@ -56,7 +56,7 @@ const handleInputChange = (e)=>{
  if(orderId){
      return(
          <div className="container my-2">
-         <h2>Gracias por su compra! Su numero de orden es {orderId}</h2>
+         <h2>Gracias por su compra! Su numero de orden es: {orderId}</h2>
          <hr/>
          <Link to="/" className="btn btn-primary">Volver</Link>
          </div>
