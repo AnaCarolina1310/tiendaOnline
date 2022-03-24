@@ -26,9 +26,12 @@ background-color: white;
   .header{
     flex-direction:column;
   }  
-  .nav-Bar {
+  .nav-Bar  {
+     width: 100%;
       display: flex;
       flex-direction: column;
   }
+  
+  
 
 }

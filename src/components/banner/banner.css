@@ -8,3 +8,9 @@
     text-align: center;
     padding-top: 6px;
 }
+@media (max-width: 768px){
+    .banner{
+        height: 90px;
+        
+    }
+}
