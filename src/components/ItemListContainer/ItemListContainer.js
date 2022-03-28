@@ -5,6 +5,7 @@ import { Item } from "../Item/item"
 import { useParams } from "react-router-dom"
 import { db } from "../../firebase/config"
 import { collection, getDocs, query, where } from "firebase/firestore"
+import { Col, Container, Row } from "react-bootstrap"
 
 export const ItemListContainer = () =>{
    const  [productos, setProductos ] = useState([]); 
@@ -24,13 +25,17 @@ export const ItemListContainer = () =>{
                 }))
             })
     }, [catId])
-    
+    console.log(catId)
     
     return(
-        <section className="container">
-           <div className="row">
-            {productos.map((el, i)=> <Item key={i} nombre={el.nombre} stock={el.stock} id={el.id} precio={el.precio} descripcion={el.descripcion} imagen={el.imagen}/>)}
-            </div>
-        </section>
+        
+           <Container>
+               <Row >
+                    {productos.map((el, i)=> <Item  key={i} nombre={el.nombre} stock={el.stock} id={el.id} precio={el.precio} descripcion={el.descripcion} imagen={el.imagen}/>)}
+               </Row>
+               
+            </Container>
+            
+       
     )
 }

@@ -1,15 +1,14 @@
-import './item.css'
-import { Button } from 'react-bootstrap'
+import { Button, Col } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import {Link} from  'react-router-dom'
 export const Item = ({id, nombre, precio, imagen, descripcion, stock})=>{
     return (
-      <div >
+      <Col md={3} xs={12}>
        
-       <Card style={{ width: '30%' }}>
-  <Card.Img variant="top" src={imagen} />
-  <Card.Body>
-    <Card.Title>{nombre}</Card.Title>
+       <Card style={{width:'16 rem'}} >
+            <Card.Img variant="top" src={imagen} />
+          <Card.Body>
+          <Card.Title>{nombre}</Card.Title>
     <Card.Text>
      {descripcion}
     </Card.Text>
@@ -21,6 +20,6 @@ export const Item = ({id, nombre, precio, imagen, descripcion, stock})=>{
     </Link>
   </Card.Body>
 </Card>
-</div>
+</Col>
     )
 }

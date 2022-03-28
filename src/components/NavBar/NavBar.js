@@ -16,6 +16,7 @@ export const NavBar = ()=> {
                 <Link  to='/productos/rosso' className="enlaces">Rosso</Link>
                 <CartWidget/>
             </nav>
+       
         </header>
     )
 }

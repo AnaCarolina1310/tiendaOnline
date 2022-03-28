@@ -1,6 +1,6 @@
-.itemListContainer{
-    max-width: 900px;
-    margin: 300px auto;
-    padding: 10px;
-    display: flex;
+
+.productos{
+	width: 100%;
+	display:flex;
+	justify-content: center;
 }
