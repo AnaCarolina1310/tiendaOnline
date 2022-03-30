@@ -21,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Banner mensaje='  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua    '/>
          <NavBar/>
+        
          <Routes>
            <Route path="/" element={<ItemListContainer/>}/>
            <Route path="/productos/:catId" element={<ItemListContainer/>}/>

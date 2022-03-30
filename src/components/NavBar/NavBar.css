@@ -9,9 +9,15 @@ background-color: white;
 .nav-Bar{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 40%;
     
+    width: 30%;
+    margin-left: 50px;
+    
+}
+
+button{
+  display: none;
+  
 }
 
 .enlaces{
@@ -22,16 +28,31 @@ background-color: white;
     text-decoration-line: none;
     
 }
+
 @media (max-width: 768px) {
   .header{
     flex-direction:column;
   }  
   .nav-Bar  {
      width: 100%;
-      display: flex;
+     display: flex;
       flex-direction: column;
+      align-items: center;
+     
   }
   
-  
-
+  button{
+    display: inline-block;
+    position: relative;
+    left: 150px;
+    background-color: transparent;
+    border: none;
+    
+  }
+  .hidde{
+    display: none;
+  }
+ .enlaces {
+    padding: 15px 0px;
+ }
 }

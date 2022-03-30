@@ -1,0 +1,12 @@
+.cardBody{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.imagen img{
+    width: 30px;
+}
+.descripcion{
+    text-align: center;
+}
