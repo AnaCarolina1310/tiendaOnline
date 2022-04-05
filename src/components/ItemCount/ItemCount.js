@@ -1,4 +1,4 @@
-
+import "./itemCount.css"
 
 export const ItemCount = ({max, min = 0, counter, setCounter}) => {
  
@@ -11,10 +11,10 @@ export const ItemCount = ({max, min = 0, counter, setCounter}) => {
     }
 
     return (
-        <div>
-            <button className="btn btn-outline-primary my-2" disabled={counter === min} onClick={handleRestar}>-</button>
+        <div className="estilosCounter">
+            <button className="btn btn-outline-dark m-3" disabled={counter === min} onClick={handleRestar}>-</button>
             <span className="mx-3">{counter}</span>
-            <button className="btn btn-outline-primary m-2" disabled={counter === max} onClick={handleSumar}>+</button>
+            <button className="btn btn-outline-dark m-3" disabled={counter === max} onClick={handleSumar}>+</button>
         </div>
     )
 }

@@ -2,12 +2,12 @@
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useState, useContext } from 'react';
 import './itemDetail.css'
-import { Card } from 'react-bootstrap';
-import {Button} from 'react-bootstrap'
+import {Button, Col} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext';
+import { Carrusel } from '../Carrusel/Carrusel';
 
-export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
+export const ItemDetail = ({id, nombre, precio, imagen,stock, descList, descripcion, imagenDos}) => {
   const [ cantidad, setCantidad] = useState(0)
   
   const{cart, agregarAlCarrito, isInCart} = useContext(CartContext);
@@ -17,7 +17,7 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
    
     if (!isInCart(id)){
     const agregarItem = {
-      id, nombre, precio, stock, cantidad, imagen
+      id, nombre, precio, stock, cantidad, imagen, descList
     }
     agregarAlCarrito(agregarItem)
     
@@ -27,34 +27,42 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock}) => {
 }
 
     return (
-   <div>
-      <Card style={{ width: '60%', margin:'10px auto', border:'none'}}>
-      <Card.Img variant="top" src={imagen} style={{width:'40%',margin:'10px auto' }} />
-      <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </Card.Text>
-        <Card.Text>
-          Precio: ${precio}
-        </Card.Text>
+  
+     
+      <div className='row imagenesProd' >
+         <Col lg={4} md={6} xs={12}>
+             <Carrusel imagenUno={imagen} imagenDos={imagenDos} imagenTres={imagen}/>
+         </Col>
+         <Col lg={8} md={6} xs={12} className='contenido'>
+             <h2>{nombre}</h2>
+             <p>{descripcion}</p>
+             <h3>Precio: ${precio}</h3>
+     
+      
         {
       isInCart(id)
-      ? 
-          <Link to="/" className="btn btn-success">
-            Continuar comprando
-          </Link>
+      ? <>
+             <p >El producto ha sido añadido al carrito</p>
+             <Link to="/" className="btn btn-dark my-6 ">
+                Continuar comprando
+             </Link>
+          
+          </>
        :
        <>
-       <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
-        <Button variant="success" disabled={cantidad === 0} onClick={handleAgregar}>Añadir al carrito</Button>
+       
+              <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
+               <Button variant="dark" className='my-6 boton' disabled={cantidad === 0} onClick={handleAgregar}>Añadir al carrito</Button>
+       
       </>
     
+
     }
-      </Card.Body>
-    </Card>
+        </Col>
+       </div>
     
-    </div>
+    
+   
    
     )
 }

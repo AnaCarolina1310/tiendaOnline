@@ -1,12 +1,9 @@
-.cardBody{
- display: flex;
- flex-direction: column;
- align-items: center;
+.botonItem{
+    width: 100%;
 }
-
-.imagen img{
-    width: 30px;
+.cardProducto{
+    display: flex;
 }
 .descripcion{
-    text-align: center;
+    text-align: justify;
 }

@@ -9,6 +9,7 @@ import {Cart} from './components/Cart/Cart'
 import {Checkout} from './components/Checkout/Checkout'
 import {Footer} from './components/footer/Footer'
 import { Banner } from "./components/banner/Banner";
+import { About } from "./components/About/AboutUs";
 
 
 function App() {
@@ -21,15 +22,17 @@ function App() {
       <BrowserRouter>
         <Banner mensaje='  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua    '/>
          <NavBar/>
-        
          <Routes>
-           <Route path="/" element={<ItemListContainer/>}/>
+         <Route path="/" element={<About/>}/>
+           <Route path="/shop" element={<ItemListContainer/>}/>
            <Route path="/productos/:catId" element={<ItemListContainer/>}/>
            <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
            <Route path="*" element={<Navigate to='/'/>}/>
            <Route path="/cart" element={<Cart/>}/>
            <Route path="/checkout" element={<Checkout/>}/>
          </Routes>
+        
+        
         <Footer/>
       </BrowserRouter>
   </CartProvider>

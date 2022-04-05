@@ -19,10 +19,10 @@ export const ItemDetailContainer = ()=>{
      }, [itemId])
 
     return (
-        <div>
-
+        <div >
+            
         <ItemDetail {...item}/>
-      
-        </div>
+            </div>
+    
     )
 }

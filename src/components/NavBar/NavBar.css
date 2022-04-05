@@ -1,37 +1,47 @@
 .header{
-padding: 20px 50px;
+padding: 5px 50px;
 width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
 background-color: white;
+
+}
+.header img{
+  width: 150px;
 }
 .nav-Bar{
     display: flex;
     justify-content: space-between;
-    
+    font-size: 50px;
     width: 30%;
     margin-left: 50px;
     
 }
 
-button{
-  display: none;
-  
-}
-
 .enlaces{
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
     color: black;
     text-decoration-line: none;
+
     
+    
+}
+.enlaces-drop{
+  display: flex;
+  flex-direction: column;
+}
+.hidde{
+  display: none;
 }
 
 @media (max-width: 768px) {
   .header{
     flex-direction:column;
+    
+    
   }  
   .nav-Bar  {
      width: 100%;
@@ -41,18 +51,19 @@ button{
      
   }
   
-  button{
+  .botonNavBar{
     display: inline-block;
     position: relative;
     left: 150px;
+    top: 30px;
     background-color: transparent;
     border: none;
-    
+  
   }
   .hidde{
     display: none;
   }
  .enlaces {
-    padding: 15px 0px;
+    padding: 10px 0px;
  }
 }
