@@ -50,8 +50,8 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock, descList, descripc
           </>
        :
        <>
-       
-              <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
+               
+              <ItemCount max={stock} counter={cantidad} setCounter={setCantidad} productosStock={stock} />
                <Button variant="dark" className='my-6 boton' disabled={cantidad === 0} onClick={handleAgregar}>Añadir al carrito</Button>
        
       </>

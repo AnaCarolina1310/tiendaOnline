@@ -1,0 +1,10 @@
+.mostrar{
+   visibility: visible;
+}
+.noMostrar{
+    visibility: hidden;
+}
+
+p{
+    text-align: center;
+}
