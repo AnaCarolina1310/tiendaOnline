@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 768px){
-    .contenido p{
+    .descriptionProducto{
         margin: 20px 20px;
        text-align: justify;
        

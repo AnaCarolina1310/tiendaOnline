@@ -35,7 +35,7 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock, descList, descripc
          </Col>
          <Col lg={8} md={6} xs={12} className='contenido'>
              <h2>{nombre}</h2>
-             <p>{descripcion}</p>
+             <p className='descriptionProducto'>{descripcion}</p>
              <h3>Precio: ${precio}</h3>
      
       
@@ -43,7 +43,7 @@ export const ItemDetail = ({id, nombre, precio, imagen,stock, descList, descripc
       isInCart(id)
       ? <>
              <p >El producto ha sido añadido al carrito</p>
-             <Link to="/" className="btn btn-dark my-6 ">
+             <Link to="/shop" className="btn btn-dark my-6 ">
                 Continuar comprando
              </Link>
           
