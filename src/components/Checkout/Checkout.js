@@ -22,7 +22,7 @@ const generarOrden =  ()=>{
         total: precioTotal()
     }
     
-    const orderRefe = collection(db, "orders")
+   const orderRefe = collection(db, "orders")
    addDoc(orderRefe, order)
     .then((res)=>{
         cart.forEach((element) => {
@@ -56,9 +56,9 @@ const handleInputChange = (e)=>{
  if(orderId){
      return(
          <div className="container my-2">
-         <h2>Gracias por su compra! Su numero de orden es: {orderId}</h2>
-         <hr/>
-         <Link to="/" className="btn btn-primary">Volver</Link>
+            <h2>Gracias por su compra! Su numero de orden es: {orderId}</h2>
+            <hr/>
+            <Link to="/" className="btn btn-primary">Volver</Link>
          </div>
      )
  }

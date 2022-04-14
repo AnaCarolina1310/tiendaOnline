@@ -37,7 +37,7 @@ export const CartProvider = ({children}) =>{
         eliminarProducto
       }
       }>
-    {children}
+       {children}
      </CartContext.Provider>
     )
 }
