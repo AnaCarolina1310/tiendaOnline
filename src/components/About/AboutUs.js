@@ -1,4 +1,5 @@
 import {Carrusel} from '../Carrusel/Carrusel'
+import { ContactUs } from '../ContactUs/ContactUs'
 export const About = ()=>{
     return(
         <>
