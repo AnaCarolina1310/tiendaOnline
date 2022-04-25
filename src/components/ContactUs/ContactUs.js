@@ -1,6 +1,7 @@
 
 import { useForm } from "../../hooks/useForm"
 import {Col} from 'react-bootstrap'
+import { Loading } from "../Loading/Loading";
 
  const inicialForm = {
      nombre: '',
@@ -10,7 +11,7 @@ import {Col} from 'react-bootstrap'
  const validacionesForm =(form)=>{
      let errores = {};
      let expNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-     let expEmail = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+     let expEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
      let expComentarios =  /^.{1,255}$/;
 
      if(!form.nombre.trim()){
@@ -18,11 +19,12 @@ import {Col} from 'react-bootstrap'
      }else if(!expNombre.test(form.nombre.trim())){
          errores.nombre = "El campo 'nombre' solo acepta letras y espacios vacios"
      }
-     if(!form.email.trim()){
-        errores.email = "El campo 'e-mail' es necesario"
-    }else if(!expEmail.test(form.email.trim())){
-        errores.email = "El campo 'nombre' solo correos electronicos"
-    }
+     if (!form.email.trim()) {
+        errores.email = "El campo 'Email' es requerido";
+      } else if (!expEmail.test(form.email.trim())) {
+        errores.email = "El campo 'Email' es incorrecto";
+      }
+
     if(!form.comentarios.trim()){
         errores.comentarios = "Agrega tu comentario"
     }else if(!expComentarios.test(form.comentarios.trim())){
@@ -80,6 +82,8 @@ export const ContactUs =()=>{
             className="form-control my-2" 
             value='Enviar'/>
         </form>
+        {loading && <Loading/>}
+        {response && <p>El mensaje se envio correctamente</p>}
         </Col>
         
       
