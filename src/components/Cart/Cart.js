@@ -45,7 +45,7 @@ export const Cart = () => {
                 <Link to="/checkout" className="btn btn-dark m-3" >Finalizar compra</Link>
              </div>:
              <div>
-                 <Link to="/" className="btn btn-success" >Volver</Link>
+                 <Link to="/shop" className="btn btn-success" >Volver</Link>
             </div>
             }
         </div>

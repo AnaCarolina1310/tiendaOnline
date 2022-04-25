@@ -68,7 +68,7 @@ export const ContactUs =()=>{
             onBlur={handleBlur}
             onChange={handleChange}
             value={form.email}/>
-            
+            {errores.email && <p>{errores.email}</p>}
             <textarea 
             type='textArea' 
             className="form-control my-2"
@@ -77,7 +77,7 @@ export const ContactUs =()=>{
             onBlur={handleBlur}
             onChange={handleChange}
             value={form.comentarios}/>
-           
+           {errores.comentarios && <p>{errores.comentarios}</p>}
            <input type='submit'
             className="form-control my-2" 
             value='Enviar'/>

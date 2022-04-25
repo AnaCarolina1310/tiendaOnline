@@ -24,7 +24,7 @@ export const ItemListContainer = () =>{
                 }))
             })
     }, [catId])
-    console.log(catId)
+    
     
     useEffect(()=>{
         if(catId=== 'nero'){
