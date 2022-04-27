@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel'
-import './carrusel.css'
+
 export const Carrusel = ({imagenUno, imagenDos, imagenTres})=>{
    
     return(
@@ -7,7 +7,7 @@ export const Carrusel = ({imagenUno, imagenDos, imagenTres})=>{
  <Carousel>
   <Carousel.Item>
     <img
-      className="d-block "
+      className="d-block w-100"
       src={imagenUno}
       alt="First slide"
     />
@@ -15,7 +15,7 @@ export const Carrusel = ({imagenUno, imagenDos, imagenTres})=>{
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block "
+      className="d-block w-100 "
       src={imagenDos}
       alt="Second slide"
     />
@@ -24,12 +24,12 @@ export const Carrusel = ({imagenUno, imagenDos, imagenTres})=>{
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block"
+      className="d-block w-100"
       src={imagenTres}
       alt="Third slide"
     />
 
-    
+  {console.log(window.screen.height)}
   </Carousel.Item>
 </Carousel>
 

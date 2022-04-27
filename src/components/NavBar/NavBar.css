@@ -5,10 +5,13 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 background-color: white;
+position: fixed;
+z-index: 999;
+
 
 }
 .header img{
-  width: 150px;
+  width: 80px;
 }
 .nav-Bar{
     display: flex;

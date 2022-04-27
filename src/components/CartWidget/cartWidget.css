@@ -1,9 +1,10 @@
 .carrito-icon{
-    font-size: 30px;
+    font-size: 25px;
     color: rgb(0, 0, 0);
     visibility: visible;
     opacity: 1;
     transition: all .5s ease-out;
+    margin: 0px 4px;
    
 }
  .cart-hidden{
