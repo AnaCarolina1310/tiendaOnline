@@ -14,9 +14,7 @@ import { Loading } from "../Loading/Loading";
      let expEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
      let expComentarios =  /^.{1,255}$/;
 
-     if(!form.nombre.trim()){
-         errores.nombre = "El campo 'nombre' es necesario"
-     }else if(!expNombre.test(form.nombre.trim())){
+     if(!expNombre.test(form.nombre.trim())){
          errores.nombre = "El campo 'nombre' solo acepta letras y espacios vacios"
      }
      if (!form.email.trim()) {
