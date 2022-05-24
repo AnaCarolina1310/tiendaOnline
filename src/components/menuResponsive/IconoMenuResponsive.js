@@ -1,9 +1,9 @@
-import {AiOutlineMenu} from 'react-icons/ai'
+import { AiOutlineMenu } from "react-icons/ai";
 
-export const IconoMenuResponsive = () =>{
-    return(
-        <>
-        <AiOutlineMenu/>
-        </>
-    )
-}
+export const IconoMenuResponsive = () => {
+  return (
+    <>
+      <AiOutlineMenu />
+    </>
+  );
+};
